@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App;
 
+use ContainerInteropDoctrine\EntityManagerFactory;
+use Doctrine\ORM\EntityManagerInterface;
+
 /**
  * The configuration provider for the App module
  *
@@ -37,6 +40,7 @@ class ConfigProvider
             ],
             'factories'  => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+                EntityManagerInterface::class => EntityManagerFactory::class,
             ],
         ];
     }
